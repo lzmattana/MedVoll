@@ -13,6 +13,7 @@ public class MedicoController {
     // dizendo q o parametro json vai vir no corpo da req
     // esse metodo recebe o corpo todo da req atraves da class
     // padrao DTO data transfer object
+    // classe DTO de medico
     public void cadastrar(@RequestBody DadosCadastroMedico dados){
         System.out.println(dados);
 
