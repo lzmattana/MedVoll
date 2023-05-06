@@ -4,6 +4,7 @@ import med.voll.api.medico.DadosCadastroMedico;
 import med.voll.api.medico.Medico;
 import med.voll.api.medico.MedicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ public class MedicoController {
 
 
     @PostMapping // se chegar uma req tipo post cadastrar
+    @Transactional // deixar transação ativa com DB
     // dizendo q o parametro json vai vir no corpo da req
     // esse metodo recebe o corpo todo da req atraves da class
     // padrao DTO data transfer object
