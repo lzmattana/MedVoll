@@ -35,14 +35,22 @@ public class MedicoController {
     // usando pageable para paginacao
     public Page<DadosListagemMedico> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao){
         // metodo para trasf medicos em dadolstmed
-        return repository.findAll(paginacao).map(DadosListagemMedico::new); // medoto vem do medrep -> jparepo
+        return repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new); // medoto vem do medrep -> jparepo
     }
     @PutMapping
     @Transactional
     public void atualiza(@RequestBody @Valid DadosAtualizacaoMedico dados){
-        var medico = repository.getReferenceById(dados.id());
+        var medico = repository.getReferenceById(dados.id()); // carregar pelo id
         medico.atualizarInfo(dados);
     }
+
+    @DeleteMapping("/{id}") // parametro dinamico na URL
+    @Transactional // para para sql
+    public void exluir(@PathVariable Long id){ // usa pathvar para indicar ao spring
+        var medico = repository.getReferenceById(id); // carregar pelo id
+        medico.exluir();
+    }
+
 
 
 
