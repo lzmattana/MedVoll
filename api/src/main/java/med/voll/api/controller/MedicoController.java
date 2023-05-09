@@ -64,7 +64,12 @@ public class MedicoController {
         return ResponseEntity.noContent().build(); // metodo para dar resposta no navegador
     }
 
+    @GetMapping("/{id}") // parametro dinamico na URL
+    public ResponseEntity detalhar(@PathVariable Long id) { // usa pathvar para indicar ao spring
+        var medico = repository.getReferenceById(id); // carregar pelo id
+
+        return ResponseEntity.ok(new DadosDetalhamentoMedico(medico)); // metodo para dar resposta no navegador
 
 
-
+    }
 }
