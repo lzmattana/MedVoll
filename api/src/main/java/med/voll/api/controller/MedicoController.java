@@ -26,7 +26,7 @@ public class MedicoController {
     @PostMapping // se chegar uma req tipo post cadastrar
     @Transactional // deixar transação ativa com DB
     // dizendo q o parametro json vai vir no corpo da req
-    // esse metodo recebe o corpo todo da req atraves da class
+    // esse metodo recebe o corpo todoo da req atraves da class
     // padrao DTO data transfer object
     // classe DTO de medico
     public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedico dados, UriComponentsBuilder uriBuilder){

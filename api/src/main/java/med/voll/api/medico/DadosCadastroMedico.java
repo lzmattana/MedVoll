@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Pattern;
 import med.voll.api.endereco.DadosEndereco;
 
 
-// so criar uma classe record com todos os parametros o spring ja toma conta de todo o resto
+// so criar uma classe record com todos os parametros o spring ja toma conta de todoo o resto
 public record DadosCadastroMedico(
         @NotBlank
         String nome,
