@@ -1,4 +1,4 @@
-package med.voll.api.medico;
+package med.voll.api.domain.medico;
 
 // record para listar medicos, dto representando
 public record DadosListagemMedico(Long id, String nome, String email, String crm, Especialidade especialidade) {
